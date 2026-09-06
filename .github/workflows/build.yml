@@ -29,6 +29,7 @@ jobs:
         python generate_sounds.py
         python generate_icon.py
         python generate_reference_assets.py
+        python prepare_user_audio.py
 
     - name: Build Main App (ransom.exe)
       run: python -m PyInstaller --clean ransom.spec
