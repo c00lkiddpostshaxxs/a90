@@ -24,6 +24,12 @@ jobs:
         pip install pyinstaller
         pip install -r requirements.txt
 
+    - name: Generate Assets and Sounds
+      run: |
+        python generate_sounds.py
+        python generate_icon.py
+        python generate_reference_assets.py
+
     - name: Build Main App (ransom.exe)
       run: python -m PyInstaller --clean ransom.spec
 
