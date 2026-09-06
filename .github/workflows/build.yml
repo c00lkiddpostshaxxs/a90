@@ -1,0 +1,37 @@
+name: Build 32-bit Windows EXEs
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python (32-bit)
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        architecture: 'x86' 
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        pip install -r requirements.txt
+
+    - name: Build Main App (ransom.exe)
+      run: python -m PyInstaller --clean ransom.spec
+
+    - name: Build Settings App (ransom_setting.exe)
+      run: python -m PyInstaller --clean ransom_setting.spec
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: Doors-Ransom-32bit-EXEs
+        path: dist/
