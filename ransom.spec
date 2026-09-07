@@ -79,7 +79,7 @@ a = Analysis(
         *[(str(project_dir / "assets" / name), "assets") for name in safe_asset_names],
         (str(project_dir / "sounds"), "sounds"),
     ],
-    hiddenimports=[],
+    hiddenimports=['pygame.display', 'pygame.draw', 'pygame.image', 'pygame.joystick', 'pygame.key', 'pygame.mouse', 'pygame.cursors', 'pygame.sprite', 'pygame.threads', 'pygame.pixelcopy', 'pygame.time', 'pygame.transform'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
