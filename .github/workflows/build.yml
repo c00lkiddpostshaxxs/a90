@@ -21,22 +21,20 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyinstaller
-        pip install pygame
         pip install -r requirements.txt
+        pip install -r requirements-build.txt
 
     - name: Generate Assets and Sounds
       run: |
         python generate_sounds.py
         python generate_icon.py
         python generate_reference_assets.py
-        python prepare_user_audio.py
 
     - name: Build Main App (ransom.exe)
-      run: python -m PyInstaller --clean ransom.spec
+      run: python -m PyInstaller --clean --collect-all pygame ransom.spec
 
     - name: Build Settings App (ransom_setting.exe)
-      run: python -m PyInstaller --clean ransom_setting.spec
+      run: python -m PyInstaller --clean --collect-all pygame ransom_setting.spec
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
