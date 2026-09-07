@@ -1,6 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 from pathlib import Path
+from PyInstaller.utils.hooks import collect_all
+datas, binaries, hiddenimports = collect_all('pygame')
 
 
 project_dir = Path(SPECPATH).resolve()
@@ -74,12 +76,9 @@ excluded_modules = [
 a = Analysis(
     [str(runtime_script)],
     pathex=[str(project_dir)],
-    binaries=[],
-    datas=[
-        *[(str(project_dir / "assets" / name), "assets") for name in safe_asset_names],
-        (str(project_dir / "sounds"), "sounds"),
-    ],
-    hiddenimports=['pygame.display', 'pygame.draw', 'pygame.image', 'pygame.joystick', 'pygame.key', 'pygame.mouse', 'pygame.cursors', 'pygame.sprite', 'pygame.threads', 'pygame.pixelcopy', 'pygame.time', 'pygame.transform'],
+    binaries=binaries,
+    datas=datas,
+    hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
