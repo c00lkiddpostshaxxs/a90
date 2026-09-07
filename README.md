@@ -17,7 +17,7 @@ This project tries to recreate the look and feel of the DOORS Ransom/A-90 sequen
 
 ### PC source code (before building)
 
-[**Download the Windows source ZIP**](https://github.com/masashira0212-stack/Doors-Ransom-A-90-Simulation/archive/refs/heads/main.zip)
+[**Download the Windows source ZIP**](https://github.com/c00lkiddpostshaxxs/a90/archive/refs/heads/main.zip)
 
 You can also click **Code → Download ZIP**. This contains the editable Python source for both `ransom.exe` and `ransom_setting.exe`, the images/audio/font, tests and build configuration. It is the **PC version**, not the Android project. EXEs, caches and personal settings are not included.
 
@@ -25,7 +25,7 @@ Source version: **1.1.6**. The download follows the latest code on `main`.
 
 ### Ready-to-run EXEs
 
-Prebuilt downloads belong in the [Releases](https://github.com/masashira0212-stack/Doors-Ransom-A-90-Simulation/releases) section. Downloading source does not install or start the app.
+Prebuilt downloads belong in the [Releases](https://github.com/c00lkiddpostshaxxs/a90/releases) section. Downloading source does not install or start the app.
 
 If Windows SmartScreen shows a warning, that can happen with unsigned indie executables. Only download builds from this repository's official Releases page.
 
