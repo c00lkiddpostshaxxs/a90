@@ -6,7 +6,7 @@ a = Analysis(
     [str(project_dir / "ransom_setting.py")],
     pathex=[str(project_dir)], binaries=[],
     datas=[(str(project_dir / "assets" / "ransom.ico"), "assets")],
-    hiddenimports=[], hookspath=[], hooksconfig={}, runtime_hooks=[],
+    hiddenimports=['pygame.display', 'pygame.draw', 'pygame.image', 'pygame.joystick', 'pygame.key', 'pygame.mouse', 'pygame.cursors', 'pygame.sprite', 'pygame.threads', 'pygame.pixelcopy', 'pygame.time', 'pygame.transform'], hookspath=[], hooksconfig={}, runtime_hooks=[],
     excludes=["PIL", "pygame", "numpy", "pytest", "unittest"],
     noarchive=False, optimize=2,
 )
