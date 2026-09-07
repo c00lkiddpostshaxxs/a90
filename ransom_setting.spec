@@ -8,7 +8,7 @@ a = Analysis(
     [str(project_dir / "ransom_setting.py")],
     pathex=[str(project_dir)],
     binaries=binaries,
-    datas=datas,
+    datas=[('assets', 'assets'), ('sounds', 'sounds')] + datas,
     hiddenimports=hiddenimports,
     excludes=["PIL", "numpy", "pytest", "unittest"],
     noarchive=False, optimize=2,
