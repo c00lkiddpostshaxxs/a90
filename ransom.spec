@@ -48,7 +48,7 @@ a = Analysis(
     [str(runtime_script)],
     pathex=[str(project_dir)],
     binaries=binaries,
-    datas=datas,
+    datas=[('assets', 'assets'), ('sounds', 'sounds')] + datas,
     hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
