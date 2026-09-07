@@ -39,8 +39,8 @@ jobs:
     - name: Compress with UPX Ultra-Brute
       run: |
         choco install upx
-        upx --ultra-brute dist/ransom.exe
-        upx --ultra-brute dist/ransom_setting.exe
+        upx --ultra-brute --force dist/ransom.exe
+        upx --ultra-brute --force dist/ransom_setting.exe
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
