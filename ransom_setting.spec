@@ -1,12 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 from pathlib import Path
+from PyInstaller.utils.hooks import collect_all
+datas, binaries, hiddenimports = collect_all('pygame')
 
 project_dir = Path(SPECPATH).resolve()
 a = Analysis(
     [str(project_dir / "ransom_setting.py")],
     pathex=[str(project_dir)], binaries=[],
-    datas=[(str(project_dir / "assets" / "ransom.ico"), "assets")],
-    hiddenimports=['pygame.display', 'pygame.draw', 'pygame.image', 'pygame.joystick', 'pygame.key', 'pygame.mouse', 'pygame.cursors', 'pygame.sprite', 'pygame.threads', 'pygame.pixelcopy', 'pygame.time', 'pygame.transform'], hookspath=[], hooksconfig={}, runtime_hooks=[],
+    binaries=binaries,
+    datas=datas,
+    hiddenimports=hiddenimports,
     excludes=["PIL", "pygame", "numpy", "pytest", "unittest"],
     noarchive=False, optimize=2,
 )
